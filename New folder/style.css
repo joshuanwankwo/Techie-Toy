@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+@font-face {
+    font-family: Poppins-Regular;
+    src: url('Poppins-Regular.ttf')
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: Poppins
+}
+body{
+    background-color: rgba(233, 228, 185, 0.274);
+
+}
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    margin: 0px auto;
+}
+
+.heading{
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: #e23e3e;
+    background-color: hsl(0, 74%, 56%, 0.5);
+}
+.product_container{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+.products{
+    width: 23%;
+    height: 450px;
+    background-color: transparent;
+    transition: 0.3s all ease-in-out;
+    perspective: 1000px;
+    animation: slide-in-bottom 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.products:hover{
+    transform: scale(1.05);
+}
+
+.card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.products:hover .card-inner {
+    transform: rotateY(180deg)
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-front {
+    background: #ffffff;
+}
+
+.card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #e23e3e;
+    color: #ffffff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.image{
+    overflow: hidden;
+}
+
+.image img {
+    width: 100%;
+    height: 300px;
+    transition: 0.3s all ease-in-out;
+}
+
+.image img:hover {
+    transform: scale(1.5)
+}
+
+
+.desc{
+    text-align: center;
+    padding: 10px;
+}
+
+button{
+    margin: 2rem;
+    padding: 0.4rem 4rem;
+    background-color: #ffffff;
+    color: #e23e3e;
+}
+button:hover{
+    background-color: rgb(124, 211, 124);
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+ @keyframes slide-in-bottom {
+    0% {
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .products:nth-child(1) { animation-delay: 0.3S }
+  .products:nth-child(2) { animation-delay: 0.4S }
+  .products:nth-child(3) { animation-delay: 0.5S }
+  .products:nth-child(4) { animation-delay: 0.6S }
